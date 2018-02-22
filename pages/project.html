@@ -1,0 +1,12 @@
+<div class="jumbotron text-center">
+	<h3>{{ message }}</h3>
+	<!-- <p class="text-left">{{ message }}</p> -->
+	<ul class="example-animate-container project-list">
+		<li class="animate-repeat" ng-repeat="project in projects.projects">
+			<a href="#projects/{{project.reponame}}">{{project.reponame}}</a>
+		</li>
+		<li class="animate-repeat" ng-if="results.length === 0">
+		<strong>No results found...</strong>
+		</li>
+	</ul>
+</div>

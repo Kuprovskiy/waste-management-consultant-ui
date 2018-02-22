@@ -1,0 +1,39 @@
+<div class="jumbotron text-center">
+	<h3>{{ message }}</h3>
+	<!-- <p class="text-left">{{ message }}</p> -->
+	<ul class="example-animate-container project-list">
+		<div ng-show="status.builds.master_after_merge.success == 0 && status.builds.master_after_merge.failed == 0">Not yet merged to master!</div>
+		<div ng-show="status.builds.master_after_merge.success > 0 || status.builds.master_after_merge.failed > 0">
+			<h3 ng-if="status.builds.master_after_merge.success/status.builds.master_after_merge.failed < 1" style="color: red;">Highly unstable build</h3>
+			<h3 ng-if="status.builds.master_after_merge.success/status.builds.master_after_merge.failed >=1" style="color: green;">Stable build</h3>
+			<div>
+				<div id="canvas-holder" style="width:100%">
+			        <canvas id="chart-area" />
+			    </div>
+			</div>
+		</div>
+		<h3 ng-if="status.builds.success/status.builds.failed < 1" style="color: red;">Highly unstable build</h3>
+		<h3 ng-if="status.builds.success/status.builds.failed >= 1" style="color: green;">Stable build</h3>
+		<div>
+			<div id="canvas-holder2" style="width:100%">
+		        <canvas id="chart-area2" />
+		    </div>
+		</div>
+		<!-- <label>
+			Builds after merge to master:
+		</label><br> -->
+		<!-- <div>
+			Success: <strong>{{ status.builds.master_after_merge.success }}</strong> Failed: <strong>{{ status.builds.master_after_merge.failed }}</strong>
+		</div><br> -->
+
+		<!-- <label>
+			Feature builds:
+		</label><br>
+		<div>
+			Success: <strong>{{ status.builds.success }}</strong> Failed: <strong>{{ status.builds.failed }}</strong>
+		</div><br> -->
+		<li class="animate-repeat" ng-if="results.length === 0">
+		<strong>No results found...</strong>
+		</li>
+	</ul>
+</div>

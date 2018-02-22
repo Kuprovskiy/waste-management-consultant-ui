@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<!-- define angular app -->
+<html ng-app="app">
+<title>Waste Manager Consultant</title>
+<head>
+  <!-- SCROLLS -->
+  <link rel="stylesheet" href="vendors/bootstrap.min.css" />
+  <link rel="stylesheet" href="vendors/font-awesome.css" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- SPELLS -->
+  <script src="vendors/angular.min.js"></script>
+  <script src="vendors/angular-route.js"></script>
+  <script src="vendors/angular-resource.js"></script>
+  <script src="http://www.chartjs.org/dist/2.7.1/Chart.bundle.js"></script>
+  <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+  <script src="script.js"></script>
+</head>
+
+<!-- define angular controller -->
+<body ng-controller="mainController">
+
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Waste Manager Consultant</a>
+      </div>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#projects"><i class="fa fa-shield"></i> Projects</a></li>
+        <li><a href="#statistic"><i class="fa fa-comment"></i> Kuprovskyi</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="main">
+  
+    <!-- angular templating -->
+		<!-- this is where content will be injected -->
+    <div ng-view></div>
+    
+  </div>
+  
+  <footer class="text-center">
+    <p>Waste Management Consultant</p>
+  </footer>
+  
+</body>
+
+</html>
